@@ -12,27 +12,27 @@ export default class Form extends Component {
 
     super(props);
     this.state = {
-      values: { ...values },
+      fields: [...values],
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(e, i) {
-    let target = e.currentTarget;
-    const values = this.state.values;
-    values[i].value = target.value;
+  handleChange(input, id) {
+    const newFields = [...this.state.fields];
+    console.log(input);
+    newFields[id].value = input;
 
     this.setState({
-      values: values,
+      fields: [...newFields],
     });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const { handleSubmit } = this.props;
-    handleSubmit({ ...this.state.values });
+    handleSubmit({ ...this.state.fields });
   }
   render() {
     const { fields } = this.props;
@@ -50,9 +50,14 @@ export default class Form extends Component {
         {fields.map((field, i) => {
           const { label, name, type } = field;
           return (
-            <div key={i} className="form-group">
-              <Input label={label} name={name} type={type} />
-            </div>
+            <Input
+              label={label}
+              name={name}
+              type={type}
+              id={i}
+              key={i}
+              handleChange={(input, id) => this.handleChange(input, id)}
+            />
           );
         })}
         <button className="btn btn-primary">Submit</button>
