@@ -14,7 +14,6 @@ export default class SignUp extends Component {
   render() {
     const { field01, field02 } = this.state;
     const { minimumLength } = this.props;
-    let expression = 1;
     return (
       <div>
         <Password
@@ -28,7 +27,7 @@ export default class SignUp extends Component {
           }
         />
         <Password
-          label="Confrim Password"
+          label="Confirm Password"
           handleChange={(e) => {
             this.setState({ field02: e.currentTarget.value });
           }}

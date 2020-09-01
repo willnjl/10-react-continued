@@ -14,7 +14,15 @@ function App() {
       <SignUp minimumLength={3} />
       <Max numbers={[0, 5, 10, 15]} max={25} />
       <Button handleUpdate={(count) => console.log(count)} />
-      <Form handleSubmit={(object) => console.log(object)} />
+      <Form
+        handleSubmit={(object) => console.log(object)}
+        fields={[
+          { label: "Name", name: "name", type: "text" },
+          { label: "E-mail", name: "email", type: "email" },
+          { label: "Telephone Number", name: "telephone", type: "tel" },
+          { label: "Date of Birth", name: "dob", type: "date" },
+        ]}
+      />
     </div>
   );
 }
