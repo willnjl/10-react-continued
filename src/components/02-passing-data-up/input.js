@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function input({ label, name, type }) {
+export default function Input({ label, name, type }) {
   return (
     <>
       <label htmlFor={name}>{label}</label>
-      <input name={name} type={type} />
+      <input className="form-control form-control-sm" name={name} type={type} />
     </>
   );
 }

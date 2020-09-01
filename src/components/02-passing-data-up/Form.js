@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Input from "./Input";
 
 export default class Form extends Component {
   constructor(props) {
@@ -39,19 +40,18 @@ export default class Form extends Component {
       <form
         className="form-group"
         onSubmit={(e) => this.handleSubmit(e)}
-        style={{ maxWidth: "24rem", margin: " auto" }}
+        style={{
+          maxWidth: "24rem",
+          margin: " auto",
+          border: "1px grey solid",
+          padding: "1rem",
+        }}
       >
         {fields.map((field, i) => {
           const { label, name, type } = field;
           return (
-            <div key={i}>
-              <label htmlFor={name}>{label}</label>
-              <input
-                name={name}
-                type={type}
-                className="form-control"
-                onChange={(e) => this.handleChange(e, i)}
-              />
+            <div key={i} className="form-group">
+              <Input label={label} name={name} type={type} />
             </div>
           );
         })}
