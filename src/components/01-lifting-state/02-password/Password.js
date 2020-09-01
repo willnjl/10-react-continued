@@ -5,13 +5,14 @@ export default function Password({ label, valid, handleChange }) {
     border: "2px solid red",
   };
   return (
-    <div style={!valid ? style : null}>
+    <form className="form-group" style={{ maxWidth: "24rem", margin: " auto" }}>
       <label htmlFor="password">{label}</label>
       <input
         name="password"
         type="password"
         onChange={(e) => handleChange(e)}
+        className={`form-control ${valid ? null : "is-invalid"}`}
       />
-    </div>
+    </form>
   );
 }

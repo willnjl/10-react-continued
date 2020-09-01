@@ -37,6 +37,7 @@ export default class SignUp extends Component {
             field01.length + field02.length >= minimumLength * 2
           }
         />
+        <p className="small">minimum length {this.props.minimumLength}</p>
       </div>
     );
   }
