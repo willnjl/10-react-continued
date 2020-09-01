@@ -6,7 +6,7 @@ export default class Max extends Component {
     super(props);
 
     this.state = {
-      values: this.props.numbers.slice(),
+      values: props.numbers.slice(),
     };
     this.handleChange = this.handleChange.bind(this);
   }

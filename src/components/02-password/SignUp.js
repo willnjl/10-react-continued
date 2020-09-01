@@ -14,6 +14,7 @@ export default class SignUp extends Component {
   render() {
     const { field01, field02 } = this.state;
     const { minimumLength } = this.props;
+    let expression = 1;
     return (
       <div>
         <Password
