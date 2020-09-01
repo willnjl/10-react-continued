@@ -11,10 +11,12 @@ export default class Button extends Component {
   }
   handleClick() {
     const { handleUpdate } = this.props;
+    const { count } = this.state;
+    const updatedCount = count + 1;
     this.setState({
-      count: this.state.count + 1,
+      count: updatedCount,
     });
-    handleUpdate(this.state.count);
+    handleUpdate(updatedCount);
   }
   render() {
     return (

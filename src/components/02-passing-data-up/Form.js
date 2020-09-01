@@ -21,7 +21,6 @@ export default class Form extends Component {
 
   handleChange(input, id) {
     const newFields = [...this.state.fields];
-    console.log(input);
     newFields[id].value = input;
 
     this.setState({
