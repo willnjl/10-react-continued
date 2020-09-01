@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Squares from "./components/01-lifting-state/01-Squares/Squares";
 import SignUp from "./components/01-lifting-state/02-password/SignUp";
