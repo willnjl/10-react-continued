@@ -42,7 +42,12 @@ import axios from "./axios";
 //   .then((response) => console.log(response.data.data.id));
 
 // list comments from an article
-axios.get("/blog/articles/59/comments").then((response) => {
-  let comments = response.data.data.map((comment) => comment.comment);
-  console.log(comments);
+// axios.get("/blog/articles/59/comments").then((response) => {
+//   let comments = response.data.data.map((comment) => comment.comment);
+//   console.log(comments);
+// });
+
+//get tags
+axios.get("/blog/tags").then((response) => {
+  console.log(response.data.data);
 });
