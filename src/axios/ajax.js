@@ -58,8 +58,22 @@ import axios from "./axios";
 //   .catch(() => console.log("not found"));
 
 //output array of just the titles
+// axios.get("/blog/articles").then((response) => {
+//   let titles = response.data.data.map((article) => article.title);
+//   console.log(titles);
+// });
+
+//console.table tag frequency
 
 axios.get("/blog/articles").then((response) => {
-  let titles = response.data.data.map((article) => article.title);
-  console.log(titles);
+  let tags = response.data.data.flatMap((article) => article.tags);
+
+  let table = tags.reduce((tally, tag) => {
+    if (!tally[tag]) {
+      tally[tag] = 0;
+    }
+    tally[tag] += 1;
+    return tally;
+  }, {});
+  console.table(table);
 });
