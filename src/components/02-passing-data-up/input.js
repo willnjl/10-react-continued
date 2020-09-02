@@ -11,7 +11,8 @@ export default class input extends Component {
   }
 
   handleChange(e) {
-    this.props.handleChange(e.currentTarget.value, this.props.id);
+    const { handleChange, id } = this.props;
+    handleChange(e.currentTarget.value, id);
   }
   render() {
     const { label, name, type } = this.props;

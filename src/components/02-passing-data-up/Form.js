@@ -3,14 +3,15 @@ import Input from "./Input";
 
 export default class Form extends Component {
   constructor(props) {
+    super(props);
+
     let values = props.fields.map((field) => {
       return {
-        name: field.name,
+        field: field.name,
         value: "",
       };
     });
 
-    super(props);
     this.state = {
       fields: [...values],
     };
