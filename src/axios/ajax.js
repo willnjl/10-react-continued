@@ -52,7 +52,14 @@ import axios from "./axios";
 //   console.log(response.data.data);
 // });
 
-axios
-  .get("/blog/articles/100")
-  .then("found")
-  .catch(() => console.log("not found"));
+// axios
+//   .get("/blog/articles/100")
+//   .then("found")
+//   .catch(() => console.log("not found"));
+
+//output array of just the titles
+
+axios.get("/blog/articles").then((response) => {
+  let titles = response.data.data.map((article) => article.title);
+  console.log(titles);
+});
