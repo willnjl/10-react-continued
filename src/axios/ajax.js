@@ -48,6 +48,11 @@ import axios from "./axios";
 // });
 
 //get tags
-axios.get("/blog/tags").then((response) => {
-  console.log(response.data.data);
-});
+// axios.get("/blog/tags").then((response) => {
+//   console.log(response.data.data);
+// });
+
+axios
+  .get("/blog/articles/100")
+  .then("found")
+  .catch(() => console.log("not found"));
