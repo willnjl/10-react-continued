@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "./axios";
 import Commments from "./Comments";
+import Tags from "./Tags";
 
 export default class Article extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ export default class Article extends Component {
           <h1>{article.title}</h1>
           <p>{article.content}</p>
           {article.tags.map((tag) => (
-            <button className="btn btn-primary">{tag}</button>
+            <Tags tagName={tag} />
           ))}
         </article>
         <Commments articleID={this.props.articleID} />
