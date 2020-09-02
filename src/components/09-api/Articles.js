@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import axios from "./axios";
+import Tags from "./Tags";
 
 export default class Articles extends Component {
   constructor(props) {
@@ -29,16 +31,16 @@ export default class Articles extends Component {
           <p>loading...</p>
         ) : (
           <ul className="list-group">
-            {articles.map((article) => {
-              return (
-                <>
-                  <li key={article.id} className="list-group-item">
-                    <h1 className="lead">{article.title}</h1>
-                    <p>{article.id}</p>
-                  </li>
-                </>
-              );
-            })}
+            {articles.map(({ id, title, tags }) => (
+              <li key={id} className="list-group-item">
+                <Link to={"/news/" + id}>
+                  <h1 className="lead">{title}</h1>
+                </Link>
+                {tags.map((tag) => (
+                  <Tags tagName={tag} />
+                ))}
+              </li>
+            ))}
           </ul>
         )}
       </>

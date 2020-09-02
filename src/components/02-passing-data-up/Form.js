@@ -32,6 +32,7 @@ export default class Form extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const { handleSubmit } = this.props;
+    //reduce to single object here
     handleSubmit({ ...this.state.fields });
   }
   render() {

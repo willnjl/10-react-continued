@@ -30,14 +30,12 @@ export default class Commments extends Component {
           <p>...loading</p>
         ) : (
           <ul className="list-group">
-            {comments.map((comment, i) => {
-              return (
-                <li key={i} class="list-group-item">
-                  <h5>"{comment.comment}"</h5>
-                  <p>{comment.email}</p>
-                </li>
-              );
-            })}
+            {comments.map(({ id, comment, email }) => (
+              <li key={id} class="list-group-item">
+                <h5>"{comment}"</h5>
+                <p>{email}</p>
+              </li>
+            ))}
           </ul>
         )}
       </>
