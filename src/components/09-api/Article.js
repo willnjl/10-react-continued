@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "./axios";
+import Commments from "./Comments";
 
 export default class Article extends Component {
   constructor(props) {
@@ -26,13 +27,16 @@ export default class Article extends Component {
     return !loaded ? (
       <p>...loading </p>
     ) : (
-      <article>
-        <h1>{article.title}</h1>
-        <p>{article.content}</p>
-        {article.tags.map((tag) => (
-          <button className="btn btn-primary">{tag}</button>
-        ))}
-      </article>
+      <>
+        <article>
+          <h1>{article.title}</h1>
+          <p>{article.content}</p>
+          {article.tags.map((tag) => (
+            <button className="btn btn-primary">{tag}</button>
+          ))}
+        </article>
+        <Commments articleID={this.props.articleID} />
+      </>
     );
   }
 }

@@ -2,6 +2,7 @@
 
 
 /src/axios/axios.js
+src/components/09-api/axios.js
 
 # dependencies
 /node_modules
