@@ -7,11 +7,16 @@ import Max from "./components/01-lifting-state/03-MaxCount/Max";
 import Button from "./components/02-passing-data-up/Button";
 import Form from "./components/02-passing-data-up/Form";
 import News from "./components/09-api/News";
+import Article from "./components/09-api/Article";
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Route
+          path="/news/:id"
+          render={({ match }) => <Article articleID={match.params.id} />}
+        />
         <Route exact path="/news">
           <News />
         </Route>

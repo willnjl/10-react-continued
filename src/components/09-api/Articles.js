@@ -34,6 +34,7 @@ export default class Articles extends Component {
                 <>
                   <li key={article.id} className="list-group-item">
                     <h1 className="lead">{article.title}</h1>
+                    <p>{article.id}</p>
                   </li>
                 </>
               );
