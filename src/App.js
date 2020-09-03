@@ -16,6 +16,7 @@ import ToggleText from "./components/10-hooks/ToggleText";
 import Counter from "./components/10-hooks/Counter";
 import StepCounter from "./components/10-hooks/StepCounter";
 import CatchMeIfYouCan from "./components/10-hooks/CatchMeIfYouCan";
+import RollCall from "./components/10-hooks/RollCall";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
             <Counter initial={10} max={15} />
             <StepCounter step={50} max={200} initial={100} />
             <CatchMeIfYouCan />
+            <RollCall names={["bob", "alice", "jermaine"]} />
           </Route>
         </Switch>
       </Router>
