@@ -19,10 +19,12 @@ export default function TempConverter() {
 
   return (
     <div className="card">
-      <h1 className="card-title">Temprature Converter</h1>
+      <h1 className="card-title">Temp Converter</h1>
       <div className="card-body">
         <form className="form-group">
-          <label htmlFor="F">Fahrenheit</label>
+          <label className="lead" htmlFor="F">
+            Fahrenheit
+          </label>
           <input
             onChange={handleChangeF}
             name="F"
@@ -30,7 +32,9 @@ export default function TempConverter() {
             className="form-control"
             value={tempF}
           />
-          <label htmlFor="C">Celsius</label>
+          <label className="lead" htmlFor="C">
+            Celsius
+          </label>
           <input
             name="C"
             onChange={handleChangeC}

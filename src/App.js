@@ -18,6 +18,7 @@ import StepCounter from "./components/10-hooks/StepCounter";
 import CatchMeIfYouCan from "./components/10-hooks/CatchMeIfYouCan";
 import RollCall from "./components/10-hooks/RollCall";
 import TempConverter from "./components/10-hooks/TempConverter";
+import List from "./components/10-hooks/List";
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
             <CatchMeIfYouCan />
             <RollCall names={["bob", "alice", "jermaine"]} />
             <TempConverter />
+            <List />
           </Route>
         </Switch>
       </Router>
