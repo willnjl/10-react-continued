@@ -10,6 +10,10 @@ import Article from "./components/09-api/Article";
 import CreateArticle from "./components/09-api/CreateArticle";
 import Articles from "./components/09-api/Articles";
 import history from "./history";
+import Clicked from "./components/10-hooks/Clicked";
+import Square from "./components/10-hooks/Square";
+import ToggleText from "./components/10-hooks/ToggleText";
+import Counter from "./components/10-hooks/Counter";
 
 function App() {
   return (
@@ -42,6 +46,12 @@ function App() {
                 { label: "Date of Birth", name: "dob", type: "date" },
               ]}
             />
+          </Route>
+          <Route exact path="/hooks">
+            <Clicked />
+            <Square color="hotpink" />
+            <ToggleText alternate="World!" initial="Hello" />
+            <Counter initial={10} max={25} />
           </Route>
         </Switch>
       </Router>
