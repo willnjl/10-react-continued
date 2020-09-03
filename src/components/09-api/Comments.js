@@ -7,18 +7,13 @@ export default class Comments extends Component {
 
     this.state = {
       loaded: false,
-      comments: {},
+      comments: [],
     };
   }
 
   componentDidMount() {
     const { articleID } = this.props;
-    axios.get(`/blog/articles/${articleID}/comments`).then((response) => {
-      this.setState({
-        loaded: true,
-        comments: response.data.data,
-      });
-    });
+    axios.get(`/blog/articles/${articleID}/comments`).then(({ data }) => {});
   }
 
   render() {

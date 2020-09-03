@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Squares from "./components/01-lifting-state/01-Squares/Squares";
 import SignUp from "./components/01-lifting-state/02-password/SignUp";
@@ -9,11 +9,12 @@ import Form from "./components/02-passing-data-up/Form";
 import Article from "./components/09-api/Article";
 import CreateArticle from "./components/09-api/CreateArticle";
 import Articles from "./components/09-api/Articles";
+import history from "./history";
 
 function App() {
   return (
     <div>
-      <Router>
+      <Router history={history}>
         <Switch>
           <Route exact path="/news">
             <h1 className="display-3 text-dark">{"News"}</h1>
