@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "./axios";
-import Commments from "./Comments";
+import Comments from "./Comments";
+import CreateComment from "./CreateComment";
 import Tags from "./Tags";
 
 export default class Article extends Component {
@@ -25,6 +26,7 @@ export default class Article extends Component {
   render() {
     const { article, loaded } = this.state;
     const { title, content, tags } = article;
+    const { articleID } = this.props;
 
     return !loaded ? (
       <p>...loading </p>
@@ -36,7 +38,8 @@ export default class Article extends Component {
 
           <Tags tags={tags} />
         </article>
-        <Commments articleID={this.props.articleID} />
+        <Comments articleID={articleID} />
+        <CreateComment articleID={articleID} />
       </>
     );
   }

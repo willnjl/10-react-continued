@@ -34,12 +34,12 @@ import axios from "./axios";
 //   .then((response) => console.log(response.data.data.tags));
 
 //add a comment to an article and log its id
-// axios
-//   .post("/blog/articles/59/comments", {
-//     email: "will@will.com",
-//     comment: "nice",
-//   })
-//   .then((response) => console.log(response.data.data.id));
+axios
+  .post("/blog/articles/59/comments", {
+    email: "will@will.com",
+    comment: "nice",
+  })
+  .then((response) => console.log(response.data.data.id));
 
 // list comments from an article
 // axios.get("/blog/articles/59/comments").then((response) => {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "./axios";
 
-export default class Commments extends Component {
+export default class Comments extends Component {
   constructor(props) {
     super(props);
 
@@ -30,12 +30,16 @@ export default class Commments extends Component {
           <p>...loading</p>
         ) : (
           <ul className="list-group">
-            {comments.map(({ id, comment, email }) => (
-              <li key={id} class="list-group-item">
-                <h5>"{comment}"</h5>
-                <p>{email}</p>
-              </li>
-            ))}
+            {comments.length === 0 ? (
+              <p>...no comments yet</p>
+            ) : (
+              comments.map(({ id, comment, email }) => (
+                <li key={id} class="list-group-item">
+                  <h5>"{comment}"</h5>
+                  <p>{email}</p>
+                </li>
+              ))
+            )}
           </ul>
         )}
       </>

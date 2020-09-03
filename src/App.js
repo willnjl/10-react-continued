@@ -6,20 +6,21 @@ import SignUp from "./components/01-lifting-state/02-password/SignUp";
 import Max from "./components/01-lifting-state/03-MaxCount/Max";
 import Button from "./components/02-passing-data-up/Button";
 import Form from "./components/02-passing-data-up/Form";
-import News from "./components/09-api/News";
 import Article from "./components/09-api/Article";
 import CreateArticle from "./components/09-api/CreateArticle";
+import Articles from "./components/09-api/Articles";
 
 function App() {
   return (
     <div>
       <Router>
         <Switch>
+          <Route exact path="/news">
+            <h1 className="display-3 text-dark">{"News"}</h1>
+            <Articles />
+          </Route>
           <Route exact path="/news/create">
             <CreateArticle />
-          </Route>
-          <Route exact path="/news">
-            <News />
           </Route>
           <Route
             exact
