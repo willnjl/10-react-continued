@@ -26,7 +26,6 @@ export default class Articles extends Component {
     const { loaded, articles } = this.state;
     return (
       <>
-        <h1 className="display-1"> News</h1>
         {!loaded ? (
           <p>loading...</p>
         ) : (
