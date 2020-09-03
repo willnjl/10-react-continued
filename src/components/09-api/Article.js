@@ -32,9 +32,8 @@ export default class Article extends Component {
         <article>
           <h1>{article.title}</h1>
           <p>{article.content}</p>
-          {article.tags.map((tag) => (
-            <Tags tagName={tag} />
-          ))}
+
+          <Tags tags={article.tags} />
         </article>
         <Commments articleID={this.props.articleID} />
       </>

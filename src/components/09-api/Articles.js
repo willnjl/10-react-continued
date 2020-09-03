@@ -26,19 +26,22 @@ export default class Articles extends Component {
     const { loaded, articles } = this.state;
     return (
       <>
-        <h1> look at my blogs</h1>
+        <h1 className="display-1"> News</h1>
         {!loaded ? (
           <p>loading...</p>
         ) : (
           <ul className="list-group">
             {articles.map(({ id, title, tags }) => (
-              <li key={id} className="list-group-item">
+              <li
+                key={id}
+                className="list-group-item d-flex justify-content-between"
+              >
                 <Link to={"/news/" + id}>
                   <h1 className="lead">{title}</h1>
                 </Link>
-                {tags.map((tag) => (
-                  <Tags tagName={tag} />
-                ))}
+                <div>
+                  <Tags tags={tags} />
+                </div>
               </li>
             ))}
           </ul>
