@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "./axios";
 import Tags from "./Tags";
+import DeleteTag from "./DeleteTag";
 
 export default class Articles extends Component {
   constructor(props) {
@@ -35,11 +36,12 @@ export default class Articles extends Component {
                 key={id}
                 className="list-group-item d-flex justify-content-between"
               >
-                <Link to={"/news/" + id}>
+                <Link key={"link." + id} to={"/news/" + id}>
                   <h1 className="lead">{title}</h1>
                 </Link>
-                <div>
+                <div key={"tags." + id}>
                   <Tags tags={tags} />
+                  <DeleteTag articleId={id} />
                 </div>
               </li>
             ))}

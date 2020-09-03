@@ -24,16 +24,17 @@ export default class Article extends Component {
 
   render() {
     const { article, loaded } = this.state;
+    const { title, content, tags } = article;
 
     return !loaded ? (
       <p>...loading </p>
     ) : (
       <>
         <article>
-          <h1>{article.title}</h1>
-          <p>{article.content}</p>
+          <h1 className="display-3 text-primary">{title}</h1>
+          <p>{content}</p>
 
-          <Tags tags={article.tags} />
+          <Tags tags={tags} />
         </article>
         <Commments articleID={this.props.articleID} />
       </>

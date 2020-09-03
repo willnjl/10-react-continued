@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import axios from "./axios";
 
 export default class CreateArticle extends Component {
   constructor(props) {
@@ -31,9 +33,21 @@ export default class CreateArticle extends Component {
     this.setState({
       tags: array,
     });
+    console.log(array);
   }
 
-  handleSubmit() {}
+  handleSubmit() {
+    const { title, content, tags } = this.state;
+    axios
+      .post("/blog/articles", {
+        title: title,
+        content: content,
+        tags: tags,
+      })
+      .then((response) => {
+        // REDIRECT SOMEHOW HERE
+      });
+  }
 
   render() {
     const style = { padding: "2rem", margin: "auto" };
