@@ -17,6 +17,7 @@ import Counter from "./components/10-hooks/Counter";
 import StepCounter from "./components/10-hooks/StepCounter";
 import CatchMeIfYouCan from "./components/10-hooks/CatchMeIfYouCan";
 import RollCall from "./components/10-hooks/RollCall";
+import TempConverter from "./components/10-hooks/TempConverter";
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
             <StepCounter step={50} max={200} initial={100} />
             <CatchMeIfYouCan />
             <RollCall names={["bob", "alice", "jermaine"]} />
+            <TempConverter />
           </Route>
         </Switch>
       </Router>
