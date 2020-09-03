@@ -14,6 +14,8 @@ import Clicked from "./components/10-hooks/Clicked";
 import Square from "./components/10-hooks/Square";
 import ToggleText from "./components/10-hooks/ToggleText";
 import Counter from "./components/10-hooks/Counter";
+import StepCounter from "./components/10-hooks/StepCounter";
+import CatchMeIfYouCan from "./components/10-hooks/CatchMeIfYouCan";
 
 function App() {
   return (
@@ -51,7 +53,9 @@ function App() {
             <Clicked />
             <Square color="hotpink" />
             <ToggleText alternate="World!" initial="Hello" />
-            <Counter initial={10} max={25} />
+            <Counter initial={10} max={15} />
+            <StepCounter step={50} max={200} initial={100} />
+            <CatchMeIfYouCan />
           </Route>
         </Switch>
       </Router>
