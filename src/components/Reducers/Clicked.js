@@ -5,11 +5,10 @@ export default function Clicked() {
     clicked: false,
   };
 
-  const reducer = (state, action) => {
-    if (action.type === "click") {
+  const reducer = ({ clicked }, { type }) => {
+    if (type === "click") {
       return {
-        ...state,
-        clicked: !state.clicked,
+        clicked: !clicked,
       };
     }
     return state;
