@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 
+let fToCelsius = (n) => (((n - 32) * 5) / 9).toFixed(2);
+let cToFahrenheit = (n) => ((n * 9) / 5 + 32).toFixed(2);
+
 export default function TempConverter() {
-  const [tempF, setTempF] = useState(0);
-  const [tempC, setTempC] = useState(0);
+  const [tempF, setTempF] = useState("32.0");
+  const [tempC, setTempC] = useState("0");
 
   const handleChangeF = (e) => {
-    let val = +e.currentTarget.value;
+    let val = e.currentTarget.value;
     setTempF(val);
-    let converted = (n) => (((n - 32) * 5) / 9).toFixed(2);
-    setTempC(converted(val));
+    setTempC(fToCelsius(+val));
   };
   const handleChangeC = (e) => {
-    let val = +e.currentTarget.value;
+    let val = e.currentTarget.value;
     setTempC(val);
-    let converted = (n) => ((n * 9) / 5 + 32).toFixed(2);
-    setTempF(converted(val));
+    setTempF(cToFahrenheit(+val));
   };
 
   return (
@@ -27,10 +28,10 @@ export default function TempConverter() {
           </label>
           <input
             onChange={handleChangeF}
+            value={tempF}
             name="F"
             type="text"
             className="form-control"
-            value={tempF}
           />
           <label className="lead" htmlFor="C">
             Celsius

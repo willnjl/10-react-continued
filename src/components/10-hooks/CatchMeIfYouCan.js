@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
-export default function CatchMeIfYouCan() {
+const CatchMeIfYouCan = () => {
   const [posY, setPosY] = useState(20);
 
   const handleClick = () => setPosY(posY + 65);
+
   const style = {
     position: "absolute",
     left: 500,
@@ -14,4 +15,6 @@ export default function CatchMeIfYouCan() {
       {"ClickME!"}
     </div>
   );
-}
+};
+
+export default CatchMeIfYouCan;

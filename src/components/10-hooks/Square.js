@@ -7,7 +7,11 @@ export default function Square({ color }) {
     width: "200px",
     height: "200px",
     border: "2px solid black",
-    backgroundColor: toggle ? color : "blue",
+    backgroundColor: toggle ? color : "green",
   };
   return <div onClick={handleClick} style={style}></div>;
 }
+
+Square.defaultProps = {
+  color: "hotpink",
+};
